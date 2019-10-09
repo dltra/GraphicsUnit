@@ -18,5 +18,13 @@ class DrawPanelLab00 extends JPanel {//note: there can only be 1 public class pe
         g.setColor(Color.PINK);//sets the marker to pink
         g.fillRect(0,0,getWidth(),getHeight());//draws rectangle around the dimensions of the panel
         System.out.println("width: "+getWidth()+", height: " + getHeight());//prints to console the width and height
+        //drawRect(int xTopLeft, int yTopLeft, int width, int height);
+        g.drawRect(100,100, 200,300);
+        //set font
+        g.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 18));
+        //drawString(String str, int xBaselineLeft, int yBaselineLeft);
+        g.drawString("Hi Mom!", 400, 200);
+        g.drawLine(0, 300, getWidth() - 1, 300);    //draw horizontal line from (0,300) to (panel width, 300)
+        g.drawLine(200, 0, 200, getHeight() - 1); //vertical line - x1 and x2 are equal
     }
 }
