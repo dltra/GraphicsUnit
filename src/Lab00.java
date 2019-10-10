@@ -18,6 +18,7 @@ class DrawPanelLab00 extends JPanel {//note: there can only be 1 public class pe
         g.setColor(Color.PINK);//sets the marker to pink
         g.fillRect(0,0,getWidth(),getHeight());//draws rectangle around the dimensions of the panel
         System.out.println("width: "+getWidth()+", height: " + getHeight());//prints to console the width and height
+        g.setColor(Color.GREEN);
         //drawRect(int xTopLeft, int yTopLeft, int width, int height);
         g.drawRect(100,100, 200,300);
         //set font
