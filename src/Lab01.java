@@ -12,6 +12,7 @@ public class Lab01 {
     }
 }
 class DrawPanelLab01 extends JPanel {
+    ImageIcon headerImage = new ImageIcon(getClass().getResource("cs_allheader.jpg"));
     @Override
     protected void paintComponent(Graphics g) {
         g.setColor(Color.PINK);
@@ -20,6 +21,10 @@ class DrawPanelLab01 extends JPanel {
         drawIcon(180,200,g);
         drawIcon(19, 250, 100, 100, g);
         drawIcon(200, 150, 500, 100, g);
+        g.drawImage(headerImage.getImage(),10,15,null);
+        g.drawImage(headerImage.getImage(),10,215, 350, 94, null);
+        //bonus => draw scaling image
+        g.drawImage(headerImage.getImage(),(int)(.25*getWidth()),(int)(.25*getHeight()),(int)(.5*getWidth()),(int)(.2*getHeight()), null);
     }
     public void drawIcon(int x, int y, Graphics g){
         int[] xPoints = {x+0,x+100,x+200};//array of x-coordinates with respect to x
