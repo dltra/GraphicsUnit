@@ -16,9 +16,13 @@ class DrawPanelLab01 extends JPanel {
     protected void paintComponent(Graphics g) {
         g.setColor(Color.PINK);
         g.fillRect(0,0, getWidth()-1, getHeight()-1);
-        int[] xPoints = {0,100,200};//array of x-coordinates
-        int[] yPoints = {50, 0, 190};//array of y-coordinates
+        drawIcon(0,50,g);
+        drawIcon(180,200,g);
+    }
+    public void drawIcon(int x, int y, Graphics g){
+        int[] xPoints = {x+0,x+100,x+200};//array of x-coordinates with respect to x
+        int[] yPoints = {y+50, y+0, y+190};//array of y-coordinates with respect to y
         g.setColor(Color.orange);
-        g.fillPolygon(xPoints, yPoints, xPoints.length);//draw filled polygon shape pairing x- and y-coordinates
+        g.fillPolygon(xPoints, yPoints, xPoints.length);
     }
 }
