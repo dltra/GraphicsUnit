@@ -38,10 +38,11 @@ class DrawPanelLab02 extends JPanel {
         //drawRoundRect(int xTopLeft, int yTopLeft, int width, int height, int arcWidth, int arcHeight)
         g2D.drawRoundRect(200, 100, 75, 60, 100, 35);
         g2D.drawOval(getWidth() / 2 - 25, getHeight() / 5, 50, 70);        //draw an oval
-        int angle=45;
-//rotate(theta, anchorX, anchorY)
-        g2D.rotate(Math.toRadians(angle), getWidth() / 2, getHeight() / 2);//rotate 45 degrees clockwise about center
-        g2D.drawOval(getWidth() / 2 - 25, getHeight() / 5, 50, 70);        //draw an oval
-        g2D.rotate(Math.toRadians(-angle), getWidth() / 2, getHeight() / 2); //restore the orientation of the panel
+        for (int angle = 0; angle <= 360; angle += 45) {        //loop from 0 to 360 degrees, incrementing by 60 degrees
+            //rotate(theta, anchorX, anchorY)
+            g2D.rotate(Math.toRadians(angle), getWidth() / 2, getHeight() / 2);//rotate 45 degrees clockwise about center
+            g2D.drawOval(getWidth() / 2 - 25, getHeight() / 5, 50, 70);        //draw an oval
+            g2D.rotate(Math.toRadians(-angle), getWidth() / 2, getHeight() / 2); //restore the orientation of the panel
+        }
     }
 }
