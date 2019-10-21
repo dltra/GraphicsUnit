@@ -30,5 +30,13 @@ class DrawPanelLab02 extends JPanel {
         //(100,0) is now the new origin (all coordinates count from (100,0))
         g.drawPolygon(xPoints, yPoints, xPoints.length);  //closes the points by connecting last point to first point
         g.translate(-100, 0);                      //restores the origin to the top left corner
+        Graphics2D g2D = (Graphics2D) g;            //down cast to Graphics2D
+        g2D.setStroke(new BasicStroke(8.0f));     //set stroke width
+                                                    // NOTE:Only lines after this point will reflect change
+        //draw3DRect(int xTopLeft, int, yTopLeft, int width, int height, boolean raised);
+        g2D.fill3DRect(50, 100, 75, 60, false);
+        //drawRoundRect(int xTopLeft, int yTopLeft, int width, int height, int arcWidth, int arcHeight)
+        g2D.drawRoundRect(200, 100, 75, 60, 100, 35);
+        g2D.drawOval(getWidth() / 2 - 25, getHeight() / 5, 50, 70);        //draw an oval
     }
 }
