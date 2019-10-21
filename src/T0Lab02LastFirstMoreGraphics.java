@@ -26,5 +26,9 @@ class DrawPanelLab02 extends JPanel {
         g.drawPolyline(xPoints, yPoints, xPoints.length);
         //or use anonymous array
         //g.drawPolyline(new int[]{100, 200, 275}, new int[]{50, 75, 50}, xPoints.length);
+        g.translate(100, 0);                       //moves origin right 100, down 0;
+        //(100,0) is now the new origin (all coordinates count from (100,0))
+        g.drawPolygon(xPoints, yPoints, xPoints.length);  //closes the points by connecting last point to first point
+        g.translate(-100, 0);                      //restores the origin to the top left corner
     }
 }
