@@ -44,5 +44,16 @@ class DrawPanelLab02 extends JPanel {
             g2D.drawOval(getWidth() / 2 - 25, getHeight() / 5, 50, 70);        //draw an oval
             g2D.rotate(Math.toRadians(-angle), getWidth() / 2, getHeight() / 2); //restore the orientation of the panel
         }
+        //drawArc(int xTopLeft, int yTopLeft, int width, int height, int startAngle, int arcAngle);
+        g.drawArc(50, 200, 45, 75, 0, 120);  //note: in degrees
+        //Gradient color (blend from one color to another)
+        Color startColor = Color.red;
+        Color endColor = Color.blue;
+        int startX = 10, startY = 20, endX = 400, endY = 45;
+        //create a GradientPaint object
+        //rectangle with colors to transition through
+        GradientPaint gradient = new GradientPaint(startX, startY, startColor, endX, endY, endColor);
+        g2D.setPaint(gradient);                      //set the paint to GradientPaint object
+        g.fillRect(25, 330, 325, 25);                   //draw rectangle using red to blue gradient
     }
 }
